@@ -12,38 +12,56 @@ field = [
 def check():
     if field[1][1] == 'x' and field[1][2] == 'x' and field[1][3] == 'x':
         print(f'{player1} побеждает!')
+        return 'player1win'
     elif field[2][1] == 'x' and field[2][2] == 'x' and field[2][3] == 'x':
         print(f'{player1} побеждает!')
+        return 'player1win'
     elif field[3][1] == 'x' and field[3][2] == 'x' and field[3][3] == 'x':
         print(f'{player1} побеждает!')
+        return 'player1win'
 
     elif field[1][1] == 'x' and field[2][1] == 'x' and field[3][1] == 'x':
         print(f'{player1} побеждает!')
+        return 'player1win'
     elif field[1][2] == 'x' and field[2][2] == 'x' and field[3][2] == 'x':
         print(f'{player1} побеждает!')
+        return 'player1win'
     elif field[1][3] == 'x' and field[2][3] == 'x' and field[3][3] == 'x':
         print(f'{player1} побеждает!')
+        return 'player1win'
 
     elif field[1][1] == 'x' and field[2][2] == 'x' and field[3][3] == 'x':
         print(f'{player1} побеждает!')
+        return 'player1win'
 
 
-    if field[1][1] == 'o' and field[1][2] == 'o' and field[1][3] == 'o':
+    elif field[1][1] == 'o' and field[1][2] == 'o' and field[1][3] == 'o':
         print(f'{player2} побеждает!')
+        return 'player2win'
     elif field[2][1] == 'o' and field[2][2] == 'o' and field[2][3] == 'o':
         print(f'{player2} побеждает!')
+        return 'player2win'
     elif field[3][1] == 'o' and field[3][2] == 'o' and field[3][3] == 'o':
         print(f'{player2} побеждает!')
+        return 'player2win'
 
     elif field[1][1] == 'o' and field[2][1] == 'o' and field[3][1] == 'o':
         print(f'{player2} побеждает!')
+        return 'player2win'
     elif field[1][2] == 'o' and field[2][2] == 'o' and field[3][2] == 'o':
         print(f'{player2} побеждает!')
+        return 'player2win'
     elif field[1][3] == 'o' and field[2][3] == 'o' and field[3][3] == 'o':
         print(f'{player2} побеждает!')
+        return 'player2win'
 
     elif field[1][1] == 'o' and field[2][2] == 'o' and field[3][3] == 'o':
         print(f'{player2} побеждает!')
+        return 'player2win'
+
+    elif field != '-':
+        print('Ходы закончились. Ничья!')
+        return 'draw'
 
 
 def show_field():
