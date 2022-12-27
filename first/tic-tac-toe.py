@@ -22,8 +22,8 @@ def players_turn():
     def player1_turn():
         player1_chose = input(f'Сейчас ходит {player1}: ').split()
         b1, a1 = int(player1_chose[0]), int(player1_chose[1])
-        if field[b1][a1] == '-':
-            field[b1][a1] = 'x'
+        if field[a1][b1] == '-':
+            field[a1][b1] = 'x'
         else:
             print('Эта клетка уже занята.')
             player1_turn()
@@ -31,8 +31,8 @@ def players_turn():
     def player2_turn():
         player2_chose = input(f'Сейчас ходит {player2}: ').split()
         b2, a2 = int(player2_chose[0]), int(player2_chose[1])
-        if field[b2][a2] == '-':
-            field[b2][a2] = 'o'
+        if field[a2][b2] == '-':
+            field[a2][b2] = 'o'
         else:
             print('Эта клетка уже занята.')
             player2_turn()
