@@ -18,16 +18,28 @@ def show_field():
           f'сначала сверху (1, 2, 3), затем сбоку (1, 2, 3).')
 
 
-def player_turn():
-    player1_chose = input(f'Сейчас ходит {player1}: ').split()
-    b1, a1 = int(player1_chose[0]), int(player1_chose[1])
-    field[b1][a1] = 'x'
+def players_turn():
+    def player1_turn():
+        player1_chose = input(f'Сейчас ходит {player1}: ').split()
+        b1, a1 = int(player1_chose[0]), int(player1_chose[1])
+        if field[b1][a1] == '-':
+            field[b1][a1] = 'x'
+        else:
+            print('Эта клетка уже занята.')
+            player1_turn()
     show_field()
-    player2_chose = input(f'Сейчас ходит {player2}: ').split()
-    b2, a2 = int(player2_chose[0]), int(player2_chose[1])
-    field[b2][a2] = 'o'
+    def player2_turn():
+        player2_chose = input(f'Сейчас ходит {player2}: ').split()
+        b2, a2 = int(player2_chose[0]), int(player2_chose[1])
+        if field[b2][a2] == '-':
+            field[b2][a2] = 'o'
+        else:
+            print('Эта клетка уже занята.')
+            player2_turn()
 
+    player1_turn()
+    show_field()
+    player2_turn()
 
-show_field()
-player_turn()
+players_turn()
 show_field()
