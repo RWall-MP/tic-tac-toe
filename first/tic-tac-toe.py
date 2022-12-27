@@ -9,6 +9,43 @@ field = [
 ]
 
 
+def check():
+    if field[1][1] == 'x' and field[1][2] == 'x' and field[1][3] == 'x':
+        print('Игрок №1 победил!')
+    elif field[2][1] == 'x' and field[2][2] == 'x' and field[2][3] == 'x':
+        print('Игрок №1 победил!')
+    elif field[3][1] == 'x' and field[3][2] == 'x' and field[3][3] == 'x':
+        print('Игрок №1 победил!')
+
+    elif field[1][1] == 'x' and field[2][1] == 'x' and field[3][1] == 'x':
+        print('Игрок №1 победил!')
+    elif field[1][2] == 'x' and field[2][2] == 'x' and field[3][2] == 'x':
+        print('Игрок №1 победил!')
+    elif field[1][3] == 'x' and field[2][3] == 'x' and field[3][3] == 'x':
+        print('Игрок №1 победил!')
+
+    elif field[1][1] == 'x' and field[2][2] == 'x' and field[3][3] == 'x':
+        print('Игрок №1 победил!')
+
+
+    if field[1][1] == 'o' and field[1][2] == 'o' and field[1][3] == 'o':
+        print('Игрок №2 победил!')
+    elif field[2][1] == 'o' and field[2][2] == 'o' and field[2][3] == 'o':
+        print('Игрок №2 победил!')
+    elif field[3][1] == 'o' and field[3][2] == 'o' and field[3][3] == 'o':
+        print('Игрок №2 победил!')
+
+    elif field[1][1] == 'o' and field[2][1] == 'o' and field[3][1] == 'o':
+        print('Игрок №2 победил!')
+    elif field[1][2] == 'o' and field[2][2] == 'o' and field[3][2] == 'o':
+        print('Игрок №2 победил!')
+    elif field[1][3] == 'o' and field[2][3] == 'o' and field[3][3] == 'o':
+        print('Игрок №2 победил!')
+
+    elif field[1][1] == 'o' and field[2][2] == 'o' and field[3][3] == 'o':
+        print('Игрок №2 победил!')
+
+
 def show_field():
     for row in field:
         for element in row:
@@ -27,7 +64,9 @@ def players_turn():
         else:
             print('Эта клетка уже занята.')
             player1_turn()
+
     show_field()
+
     def player2_turn():
         player2_chose = input(f'Сейчас ходит {player2}: ').split()
         b2, a2 = int(player2_chose[0]), int(player2_chose[1])
@@ -39,7 +78,11 @@ def players_turn():
 
     player1_turn()
     show_field()
+    check()
     player2_turn()
+    show_field()
+    check()
+
 
 players_turn()
 show_field()
